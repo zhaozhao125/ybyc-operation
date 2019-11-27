@@ -1,0 +1,44 @@
+// 地图样式
+.search-content {
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: $size-padding;
+  box-shadow: 0px 0px 3px #666;
+  background-color: $color-white;
+  div {
+    display: flex;
+  }
+  .time {
+    white-space: nowrap;
+  }
+
+  .search-select {
+    width: 400px;
+    margin-right: 30px;
+  }
+}
+.map-content {
+  position: absolute;
+  top: 66px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.type-select {
+  display: flex;
+  align-items: center;
+  .type-name {
+    padding-right: 10px;
+    color: #606266;
+  }
+  .multi-select {
+    width: 300px;
+    margin-right: 30px;
+  }
+}

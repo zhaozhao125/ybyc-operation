@@ -1,0 +1,46 @@
+// 覆盖element ui默认样式
+@import './global.scss';
+body {
+  .el-menu {
+    border: none;
+  }
+  .el-card {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+    .el-card__header {
+      padding-top: 3px;
+    }
+  }
+  .el-table {
+    color: $color-dark;
+    .el-table__fixed,
+    .el-table__fixed-right {
+      overflow: hidden;
+    }
+  }
+  .el-select-dropdown {
+     ::-webkit-scrollbar {
+      height: initial;
+    }
+  }
+  .el-switch {
+    display: inline-flex;
+  }
+  .el-table .cell {
+    .el-button--text {
+      user-select: text;
+    }
+  }
+  .primary-append {
+    .el-input-group__append {
+      background-color: $color-blue;
+      color: #fff;
+      border: 0;
+    }
+  }
+  .cell {
+    .el-dropdown-link {
+      cursor: pointer;
+      color: $color-blue;
+    }
+  }
+}

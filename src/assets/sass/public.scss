@@ -1,0 +1,16 @@
+// 编辑交互样式
+.handle {
+    cursor: pointer;
+    user-select: none;
+    padding: 10px;
+    text-align: center;
+    color: #409eff;
+    white-space: nowrap;
+}
+
+// 点击详情样式
+.detail {
+    cursor: pointer;
+    user-select: none;
+    color: #409eff;
+}

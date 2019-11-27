@@ -1,0 +1,144 @@
+@import '../global.scss';
+$size: 20px;
+
+@mixin state($size: 7px) {
+  display: flex;
+  align-items: center;
+  &:before {
+    content: '';
+    width: $size;
+    height: $size;
+    display: inline-block;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 7px;
+  }
+}
+
+.state-red {
+  @include state();
+  &:before {
+    background-color: $color-red;
+  }
+}
+
+.state-purple {
+  @include state();
+  &:before {
+    background-color: $color-purple;
+  }
+}
+
+.state-yellow {
+  @include state();
+  &:before {
+    background-color: $color-yellow;
+  }
+}
+
+.state-blue {
+  @include state();
+  &:before {
+    background-color: $color-blue;
+  }
+}
+
+.state-green {
+  @include state();
+  &:before {
+    background-color: $color-green;
+  }
+}
+
+.state-gray {
+  @include state();
+  &:before {
+    background-color: $color-gray;
+  }
+}
+
+// 空闲
+.state-leisure {
+  @include state();
+  &:before {
+    background-color: $status-leisure;
+  }
+}
+
+//已预约
+.state-already {
+  @include state();
+  &:before {
+    background-color: $status-already;
+  }
+}
+
+//已租
+.state-rent {
+  @include state();
+  &:before {
+    background-color: $status-rent;
+  }
+}
+
+//维护中
+.state-maintain {
+  @include state();
+  &:before {
+    background-color: $status-maintain;
+  }
+}
+
+.type-color {
+  @include state(5px);
+  &:before {
+    background-color: #bdbdbd;
+  }
+}
+// 亏电
+.state-low {
+  @include state();
+  &:before {
+    background-color: $status-low;
+  }
+}
+// 状态地图
+// 空闲
+.state-map-leisure {
+  @include state($size);
+  &:before {
+    background-color: $status-leisure;
+  }
+}
+
+//已预约
+.state-map-already {
+  @include state($size);
+  &:before {
+    background-color: $status-already;
+  }
+}
+
+//已租
+.state-map-rent {
+  @include state($size);
+  &:before {
+    background-color: $status-rent;
+  }
+}
+
+//维护中
+.state-map-maintain {
+  @include state($size);
+  &:before {
+    background-color: $status-maintain;
+  }
+}
+
+// 亏电
+.state-map-low {
+  @include state($size);
+  &:before {
+    background-color: $status-low;
+  }
+}

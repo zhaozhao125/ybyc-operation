@@ -1,0 +1,45 @@
+export default [{
+  label: '搜索',
+  name: 'searchContent',
+  type: 'autocomplete',
+  placeholder: '请输入车牌号/账户名/手机号/订单号',
+  visible: true,
+  data: []
+}, {
+  label: '处理状态',
+  name: 'status',
+  type: 'select',
+  placeholder: '请选择',
+  options: [{
+    label: '待处理',
+    value: '1'
+  }, {
+    label: '公司处理',
+    value: '3'
+  }, {
+    label: '用户处理',
+    value: '5'
+  }, {
+    label: '用户提交审核',
+    value: '7'
+  }, {
+    label: '已处理',
+    value: '10'
+  }],
+  visible: true
+}, {
+  label: '城市',
+  name: 'cityId',
+  type: 'remoteCity'
+}, {
+  label: '用户编号',
+  name: 'userId',
+  type: 'autocomplete',
+  placeholder: '请输入用户编号',
+  data: []
+}, {
+  label: '违章时间',
+  name: 'violationDate',
+  type: 'daterange',
+  unixTime: true
+}]

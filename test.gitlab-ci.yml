@@ -1,0 +1,42 @@
+image: node:latest
+
+stages:
+  - build
+  - deploy
+
+build site:
+  stage: build
+  before_script:
+    # - apt-get update
+    # - apt-get install zip unzip nodejs npm -y
+    - npm install --progress=false
+  cache:
+    paths:
+    - node_modules/
+  script:
+    - npm run build
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - dist/
+  tags:
+    - 1byongche
+
+deploy:
+  stage: deploy
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - echo "$STAGING_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan 47.100.76.78 >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - ssh-add <(echo "$STAGING_PRIVATE_KEY")
+    - ssh -p22 root@47.100.76.78 "mkdir /www/h5/test/_tmp"
+    - scp -p22 -r dist/* root@47.100.76.78:/www/h5/test/_tmp
+    - ssh -p22 root@47.100.76.78 "mv /www/h5/test/html /www/h5/test/_old && mv /www/h5/test/_tmp /www/h5/test/html"
+    - ssh -p22 root@47.100.76.78 "rm -rf /var/www/_old"
+  tags:
+    - 1byongche

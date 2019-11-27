@@ -1,0 +1,54 @@
+export default [{
+  label: '订单信息',
+  items: [{
+    label: '用户名',
+    value: 'username'
+  }, {
+    label: '手机号',
+    value: 'mobilePhone'
+  }, {
+    label: '车牌号',
+    value: 'carNumber'
+  }, {
+    label: '车辆归属地',
+    value: 'cityName'
+  }, {
+    label: '订单号',
+    value: 'orderId'
+  }, {
+    label: '查询时间',
+    value: 'queryTime',
+    type: 'time'
+  }, {
+    label: '处理状态',
+    value: 'dealStatus'
+  }]
+}, {
+  label: '违章信息',
+  items: [{
+    label: '违章时间',
+    value: 'carViolationInfo.time'
+  }, {
+    label: '违章地点',
+    value: 'carViolationInfo.address'
+  }, {
+    label: '违章内容',
+    value: 'carViolationInfo.content'
+  }, {
+    label: '违章条款',
+    value: 'carViolationInfo.legalnum'
+  }, {
+    label: '罚款金额',
+    value: 'carViolationInfo.price'
+  }, {
+    label: '扣分',
+    value: 'carViolationInfo.score'
+  }, {
+    label: '处理费用',
+    value: 'carViolationInfo.handlefee'
+  }, {
+    label: '凭证图片',
+    value: 'voucherImage',
+    type: 'image'
+  }]
+}]
