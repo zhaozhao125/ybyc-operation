@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@xunlei/vue-context-menu": "^1.0.2",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "dayjs": "^1.7.7",
     "element-ui": "2.2.2",
     "localforage": "^1.7.2",
